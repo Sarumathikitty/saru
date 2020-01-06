@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(void) 
+{
+	int n,temp,dig,sum=0,rev=0;
+	scanf("%d",&n);
+	while(n!=0)
+	{
+		dig=n%10;
+		sum=sum+dig;
+		n=n/10;
+	}
+	temp=sum;
+	while(sum!=0)
+	{
+		dig=sum%10;
+		rev=rev*10+dig;
+		sum=sum/10;
+	}
+	if(temp==rev)
+	printf("YES");
+	else
+	printf("NO");
+	return 0;
+}
