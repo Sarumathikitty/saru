@@ -1,0 +1,24 @@
+def binarySearch (arr, l, r, x): 
+    if r >= l: 
+        mid_value = l + (r - l)//2
+        if arr[mid_value] == x: 
+            return mid_value 
+        elif arr[mid_value] > x: 
+            return binarySearch(arr, l, mid_value-1, x) 
+        else:
+            return binarySearch(arr, mid_value + 1, r, x) 
+    else: 
+        return -1
+
+arr = [ 2, 9, 11,127,43,131,6,9] 
+x = 131
+
+
+result = binarySearch(arr, 0, len(arr)-1, x) 
+
+if result != -1: 
+    print("value is present at index % d" % result)
+else:
+    print("value is not present" % result)
+  
+
